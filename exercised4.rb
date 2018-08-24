@@ -1,5 +1,6 @@
 #Start i from index 2, as numbers 1 and 2 are special cases
 #Go up by 2, as all even numbers are not prime numbers
+#Could be more efficient, as it currently goes through every number underneath the current number
 primeNumber = [2]
 i = 3
 j = 2
