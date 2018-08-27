@@ -95,6 +95,9 @@ while newUser == false
     end
 end
 
+system "clear"
+
+
 
 #Start of the actual app, setting variables balance and history
 balance = 0
@@ -153,7 +156,8 @@ while balance >= 0 && session
             else
                 balance = balance - withdraw
                 history.append("Withdrawal worth: #{withdraw}. Balance is now: #{balance}")
-                puts "Your new balance is #{balance}"
+                puts "Your new balance is $#{balance}"
+                enoughMoney = false
             end
         end
     #This option puts the history array, so the user can see their transactions
@@ -168,7 +172,7 @@ while balance >= 0 && session
     end
     #The selection variable exists in case the user enters anything other than 'yes' or 'no', it will loop until they enter one of the allowed options
     selection = true
-    while selection
+    while selection && session
         puts "Would you like to make another transaction? (yes/no) "
         decision = gets.chomp.downcase
         if decision == 'yes'
